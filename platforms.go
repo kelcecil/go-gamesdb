@@ -2,6 +2,11 @@ package thegamesdb
 
 //go:generate generategamesdb -output get_platforms_list.go -method GetPlatformsList -type GetPlatformListResponse -endpoint GetPlatformsList.php
 //go:generate generategamesdb -output get_platform.go -method GetPlatform -type GetPlatformResponse -endpoint GetPlatform.php
+//go:generate generategamesdb -output get_platform_games.go -method GetPlatformGames -type GetPlatformGamesResponse -endpoint GetPlatformGames.php
+
+type GetPlatformGamesResponse struct {
+	Games []GameEntity `xml:"Game"`
+}
 
 type GetPlatformListResponse struct {
 	PlatformTag Platforms `xml:"Platforms"`

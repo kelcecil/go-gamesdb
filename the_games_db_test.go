@@ -4,6 +4,17 @@ import (
 	"testing"
 )
 
+func TestGetPlatformGames(t *testing.T) {
+	parameters := map[string]string{
+		"platform": "1",
+	}
+	games, err := GetPlatformGames(parameters)
+	if err != nil {
+		t.Fatalf("%s", err.Error())
+	}
+	println(games.Games[0].Id)
+}
+
 func TestGetPlatformList(t *testing.T) {
 	parameters := map[string]string{}
 	platforms, err := GetPlatformsList(parameters)
