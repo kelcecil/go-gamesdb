@@ -9,14 +9,12 @@ Go 1.4 - go-gamesdb (will) extensively use go:generate to generate most of the r
 
 ### Setup
 
-
-#### Manually
-Make sure your PATH includes ${GOPATH}/bin in order for go generate to find the executable. 
+Make sure your PATH includes ${GOPATH}/bin in order for go generate to find the executable to generate the HTTP call code, and ensure you have make installed.  
 
 ```
 go get github.com/kelcecil/go-gamesdb
-go install github.com/kelcecil/go-gamesdb/generategamesdb
-go generate
+cd ${GOPATH}/src/kelcecil/go-gamesdb
+make
 ```
 
 ###License
