@@ -1,7 +1,7 @@
 package thegamesdb
 
-//go:generate generategamesdb -output api/get_game.go -method GetGame -type GetGameResponse -endpoint GetGame.php
-//go:generate generategamesdb -output api/get_games_list.go -method GetGamesList -type GamesList -endpoint GetGamesList.php
+//go:generate generategamesdb -output get_game.go -method GetGame -type GetGameResponse -endpoint GetGame.php
+//go:generate generategamesdb -output get_games_list.go -method GetGamesList -type GamesList -endpoint GetGamesList.php
 
 type GamesList struct {
 	Games []GameEntity `xml:"Game"`

@@ -65,7 +65,7 @@ func createDirectoryIfNotExist(file string) {
 	directory := filepath.Dir(file)
 	_, err := os.Stat(directory)
 	if os.IsNotExist(err) {
-		os.MkdirAll(directory, os.ModeDir)
+		os.MkdirAll(directory, 0777)
 	}
 }
 

@@ -1,13 +1,8 @@
 package thegamesdb
 
-import(
+import (
 	"strings"
-	"os"
 )
-
-func CreateDirectoryIfNotExist(directory string) {
-	 
-}
 
 func ConvertMapIntoGetParams(parameters map[string]string) string {
 	params := make([]string, 0)
