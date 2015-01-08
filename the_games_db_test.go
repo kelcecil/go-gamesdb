@@ -4,6 +4,17 @@ import (
 	"testing"
 )
 
+func TestGetArt(t *testing.T) {
+	parameters := map[string]string{
+		"id": "2",
+	}
+	art, err := GetArt(parameters)
+	if err != nil {
+		t.Fatalf("%s", err.Error())
+	}
+	println(len(art.Images.Fanarts))
+}
+
 func TestGetPlatformGames(t *testing.T) {
 	parameters := map[string]string{
 		"platform": "1",
