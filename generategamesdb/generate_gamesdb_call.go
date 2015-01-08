@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"os"
+	"path/filepath"
 	"text/template"
 )
 
@@ -43,6 +44,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	createDirectoryIfNotExist(options.Output)
 	f, err := os.Create(options.Output)
 	if err != nil {
 		panic(err)
@@ -56,6 +58,14 @@ func main() {
 	err = tmpl.Execute(writer, options)
 	if err != nil {
 		panic(err)
+	}
+}
+
+func createDirectoryIfNotExist(file string) {
+	directory := filepath.Dir(file)
+	_, err := os.Stat(directory)
+	if os.IsNotExist(err) {
+		os.MkdirAll(directory, os.ModeDir)
 	}
 }
 
