@@ -1,9 +1,9 @@
 package thegamesdb
 
-//go:generate generategamesdb -output get_platforms_list.go -method GetPlatformsList -type PlatformList -endpoint GetPlatformsList.php
+//go:generate generategamesdb -output get_platforms_list.go -method GetPlatformsList -type GetPlatformListResponse -endpoint GetPlatformsList.php
 //go:generate generategamesdb -output get_platform.go -method GetPlatform -type GetPlatformResponse -endpoint GetPlatform.php
 
-type PlatformList struct {
+type GetPlatformListResponse struct {
 	PlatformTag Platforms `xml:"Platforms"`
 }
 
